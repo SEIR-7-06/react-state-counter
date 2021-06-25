@@ -106,7 +106,6 @@ We should now see our changes automatically update in the browser. _The Create R
 <br/>
 
 ## Class Components
-
 ---
 <br/>
 
@@ -153,8 +152,8 @@ If you save your file and go back to your browser, you should see the App compon
 <br/>
 
 ## Add the UI Elements
-
 ---
+
 <br/>
 
 Now we'll go ahead and add the UI elements to make our app interactive. Let's add the count and the two buttons into the return statement of the `render` method.
@@ -232,6 +231,8 @@ React is expecting this property to specifically be called `state` and we aren't
 ## Storing Values in State
 ---
 
+<br>
+
 Now let's store the count in state. Create a property in the state object called count and set it's value to zero.
 
 ```js
@@ -266,8 +267,11 @@ State is simply an object that stores all of the information about our component
 <br>
 
 ## Referencing State
+---
 
-At the moment our count in our **JSX** is hard-coded to zero and it doesn't yet have to ability to change. Instead of hard-coding a value we'll reference the count property from state.
+<br>
+
+At the moment, our count in our `<p>` tag in **JSX** is hard-coded to zero. It doesn't yet have to ability to change. Instead of hard-coding a value we'll reference the count property from state.
 
 In our **JSX**, we'll change `Count: 0` to `Count: {this.state.count}`.
 
@@ -300,13 +304,153 @@ class App extends React.Component {
 
 Anytime we want to insert JavaScript into **JSX** we'll use the curly brace syntax `{}` and insert our JavaScript inbetween the two tags.
 
-In this case we're referencing the `count` property in our `state` object.
+In this case, we're referencing the `count` property in our `state` object with `this.state.count`.
+
+Take a look at our change in the browser. We should still see "Count: 0" showing on the page. Now update the value of the count in state to 1.
+```js
+state = {
+  count: 1
+}
+```
+And view the change in the browser.
+
+Change the value of count again and watch the UI automatically change.
+
+**Note:** _The idea here is, when we want something to change on the page we update state and then React will automatically update our UI for us._
+
+Continue playing around with this by changing the value in state and watching the value change automatically in the browser.
+
+<br>
 
 ### Why Do We Use "this"
+---
 
-Think back to our lesson on object oriented programming. We used classes as blueprints to create many instances of a certain type of object. Whenever we wanted to reference properties on the instance of a class we used `this` to reference the instance. When an App component get's created we are creating an instance of the `App` class
+<br>
 
-**Note:** _The key idea here is, when we want something to change on the page we update state and then React will automatically update our UI for us._
+At this point you might want to take some time to refresh yourself on our previous lesson on using the `this` keyword in a JavaScript class.
+
+We use a class as a blueprint to create many instances of a certain type of object. Whenever we wanted to reference properties on the instance of a class we used `this` to reference the instance. When an App component get's created we are creating an instance of the `App` class. We will be adding other properties and methods to our classes and we always use the `this` keyword to access them.
+
+<br>
+
+## Listening for a Button Click
+---
+
+<br>
+
+We can see how we are able to change the value in the UI by manually changing the value stored in state.
+
+However, we want the user to be able to click the "Increment" button and have that automatically increase the count value in state by 1. We want to user to be able to click the "Decrement" button and have that automatically decrease the count value in state by 1.
+
+We'll add an event listener to the "Increment" button that listens for a click.
+
+Add an `onClick` attribute to the "Increment" button.
+
+```js
+...
+
+<button onClick={}>Increment +</button>
+
+...
+```
+
+This event listener will listen for whenever this button is clicked and then call the function passed to it. We haven't passed it a function yet, so let's do that.
+
+Pass the function `() => console.log('button clicked')` inside the curly braces.
+```js
+...
+
+<button onClick={() => console.log('button clicked')}>Increment +</button>
+
+...
+```
+
+Whenever our button is clicked we will call the arrow function we passed which simply logs 'button clicked' to the console.
+
+Back in your browser, open the dev console, and click the "Increment" button.
+
+You should see your log message appear on click!
+
+<br>
+
+## Passing a Handler Function
+---
+
+<br>
+
+Our goal is to update the count in state when the button is clicked. We'll often create a separate handler function to take care of this logic.
+
+Create a method called `handleIncrementClick` in the `App` component and have it log out 'button clicked!!!'.
+
+```js
+...
+
+class App extends React.Component {
+
+  state = {
+    count: 0
+  }
+
+  handleIncrementClick() {
+    console.log('button clicked!!!');
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>React Counter</h1>
+
+        <p>Count: {this.state.count}</p>
+
+        <button>Decrement -</button>
+        
+        <button onClick={() => console.log('button clicked')}>Increment +</button>
+      </div>
+    );
+  }
+}
+
+...
+```
+
+We'll then pass the `handleIncrementClick` method to the `onClick` event listener for our button.
+
+```js
+...
+
+class App extends React.Component {
+
+  state = {
+    count: 0
+  }
+
+  handleIncrementClick() {
+    console.log('button clicked!!!');
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>React Counter</h1>
+
+        <p>Count: {this.state.count}</p>
+
+        <button>Decrement -</button>
+        
+        <button onClick={this.handleIncrementClick}>Increment +</button>
+      </div>
+    );
+  }
+}
+
+...
+```
+
+Notice that we reference the `handleIncrementClick` method with `this.handleIncrementClick`. Whenever referencing a method in our class we will do so on the `this` keyword.
+
+Now on "Increment" click, we should see our log message again. Only this time we are triggering the `handleIncrementClick` method.
+
+## Updating State
 
 
 
