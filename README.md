@@ -413,6 +413,12 @@ class App extends React.Component {
 ...
 ```
 
+<br>
+
+---
+
+<br>
+
 We'll then pass the `handleIncrementClick` method to the `onClick` event listener for our button.
 
 ```js
@@ -446,11 +452,79 @@ class App extends React.Component {
 ...
 ```
 
-Notice that we reference the `handleIncrementClick` method with `this.handleIncrementClick`. Whenever referencing a method in our class we will do so on the `this` keyword.
+Notice that we reference the `handleIncrementClick` method with `this.handleIncrementClick`. Whenever referencing a method in our class we will do so with the `this` keyword.
 
-Now on "Increment" click, we should see our log message again. Only this time we are triggering the `handleIncrementClick` method.
+Now When the button is clicked, `handleIncrementClick` will be called, which then calls our `console.log` logging our message to the console.
 
-## Updating State
+<br>
+
+## Calling setState
+---
+
+<br>
+
+We want our handler method to update the value of `count` in state. React gives us a handy method to call anytime we want to update our component's state called `setState`.
+
+Inside the `handleIncrementClick` function we'll call `this.setState()`.
+
+```js
+...
+
+handleIncrementClick() {
+  this.setState();
+}
+
+...
+```
+
+Save your file and test this out by now clicking the "Increment" button.
+
+...
+
+Uh oh! We should now get an error.
+
+![this is undefined](./images/this-is-undefined.png)
+
+Not to worry. This error is very common and we will see it a lot. `Cannot read property 'setState' of undefined` means that the `this` keyword is undefined. Because `handleIncrementClick` is being triggered by a DOM event (our click event) the `this` keyword gets lost. We'll convert `handleIncrementClick` to an arrow function, which will set the `this` keyword back to the component instance just how we want it.
+
+```js
+...
+
+handleIncrementClick = () => {
+  this.setState();
+}
+
+...
+```
+
+And now we should be error free!
+
+<br/>
+
+## Updating State with setState
+---
+
+<br>
+
+When calling the `setState()` method, we'll pass it an object specifying the properties in state we want to update and the values we want to set them to.
+
+
+We'll pass `{ count: this.state.count + 1 }` into our `setState()` function call like so.
+
+```js
+...
+
+handleIncrementClick = () => {
+  this.setState({ count: this.state.count + 1 });
+}
+
+...
+```
+This will update the value of `count` in state to one more than it was before.
+
+Save the file and test it out in your browser! If all goes well, when clicking the "Increment" button we should see the count increase by one!
+
+## React Flow
 
 
 
