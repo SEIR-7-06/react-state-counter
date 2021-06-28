@@ -522,12 +522,26 @@ handleIncrementClick = () => {
 ```
 This will update the value of `count` in state to one more than it was before.
 
-Save the file and test it out in your browser! If all goes well, when clicking the "Increment" button we should see the count increase by one!
+Save the file and test it out in your browser. If all goes well, when clicking the "Increment" button we should see the count increase by one!
 
 ## React Flow
 
+What is going on here?
 
+With React, any time we want to change imformation on the page, we update state by calling the `setState` method. And anytime we call the `stateState` method, the values in state will be updated _and then the component's `render` method will be called_. And because the **JSX** in the `render` method references state with `this.state.count` the value on the page will be updated.
 
-===============================================================
+We can trace this flow in our own Counter App. See if you can follow along in your own code.
 
-TODO: Include hungry for more on state w/React Hooks
+1. When the page loads in the browser, the component's **JSX** will render, showing the initial value of `this.state.count` which is zero. At this point the app is not doing anything, just patiently waiting for someone to click on the "Increment" button.
+
+2. When a user clicks the "Increment" button, the click event will trigger the `handleIncrementClick` method.
+
+3. The `handleIncrementClick` method will call the `setState` method passing in the updated value for `count` in state. We set `count` to one more than it was before by passing in `{ count: this.state.count + 1 }`.
+
+4. Calling `setState` will update `count` in state.
+
+5. After updating our state the `render` method will be called again. This time will pull in the new value for `this.state.count` and render the new value on the page.
+
+6. At this point, we are back to step 1. The app will patiently wait for someone to click on the "Increment" button to kick the whole process off again.
+
+**Take your time reviewing this flow again before moving on**.
