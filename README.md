@@ -532,16 +532,82 @@ With React, any time we want to change imformation on the page, we update state 
 
 We can trace this flow in our own Counter App. See if you can follow along in your own code.
 
-1. When the page loads in the browser, the component's **JSX** will render, showing the initial value of `this.state.count` which is zero. At this point the app is not doing anything, just patiently waiting for someone to click on the "Increment" button.
+1. When the page loads in the browser, the component's **JSX** will render. Inside of our `render` method we are referencing `this.state.count` and will pull in the initial value of the `count` which is zero. At this point the app is not doing anything, just patiently waiting for someone to click on the "Increment" button.
 
 2. When a user clicks the "Increment" button, the click event will trigger the `handleIncrementClick` method.
 
-3. The `handleIncrementClick` method will call the `setState` method passing in the updated value for `count` in state. We set `count` to one more than it was before by passing in `{ count: this.state.count + 1 }`.
+3. The `handleIncrementClick` method will call the `setState` method passing in the updated value for `count` in state. We want to set `count` to one more than it was before by passing in `{ count: this.state.count + 1 }`.
 
 4. Calling `setState` will update `count` in state.
 
-5. After updating our state the `render` method will be called again. This time will pull in the new value for `this.state.count` and render the new value on the page.
+5. After updating our state the `render` method will be called again. This time it will pull in the new value for `this.state.count` and render the new value on the page.
 
-6. At this point, we are back to step 1. The app will patiently wait for someone to click on the "Increment" button to kick the whole process off again.
+6. At this point, we are back to the beginning. The app is not doing anything and just patiently waiting. When a user clicks on the "Increment" button the whole process will be kicked off again.
 
-**Take your time reviewing this flow again before moving on**.
+**Take your time reviewing this flow again before moving on.** The concepts are challenging at first, but if you take the time now to understand it, it will help out a lot later as we build on these concepts.
+
+## Drecrement the Count on Click
+
+At this point we can increment our count by clicking the "Increment" button. Let's see if we can get that "Decrement" button to work. The code to get the "Decrement" button to work will look almost exactly the same as the code we wrote for "Increment" with one small change. This time when clicking "Decrement" we want to decrease the value of the `count` by 1.
+
+Try it out and see how far you can get before taking a look at the solution code!
+
+<details>
+  <summary>Solution Code:</summary>
+
+  ```js
+  import React from 'react';
+  import './App.css';
+
+  class App extends React.Component {
+
+    state = {
+      count: 0
+    }
+
+    handleIncrementClick = () => {
+      this.setState({ count: this.state.count + 1 });
+    }
+
+    handleDecrementClick = () => {
+      this.setState({ count: this.state.count - 1 });
+    }
+
+    render() {
+      return (
+        <div className="App">
+          <h1>React Counter</h1>
+
+          <p>Count: {this.state.count}</p>
+
+          <button onClick={this.handleDecrementClick}>Decrement -</button>
+          
+          <button onClick={this.handleIncrementClick}>Increment +</button>
+        </div>
+      );
+    }
+  }
+
+  export default App;
+  ```
+</details>
+
+And there you have it folks! We can now increment _and_ decrement our count on the page all by using React state.
+
+Takes some time again to review the flow of information in your code.
+
+1. When the page loads in the browser, the component's **JSX** will render. Inside of our `render` method we are referencing `this.state.count` and will pull in the initial value of the `count` which is zero. At this point the app is not doing anything, just patiently waiting for someone to click on the "Decrement" button.
+
+2. When a user clicks the "Decrement" button, the click event will trigger the `handleDecrementClick` method.
+
+3. The `handleDecrementClick` method will call the `setState` method passing in the updated value for `count` in state. We want to set `count` to one less than it was before by passing in `{ count: this.state.count - 1 }`.
+
+4. Calling `setState` will update `count` in state.
+
+5. After updating our state the `render` method will be called again. This time it will pull in the new value for `this.state.count` and render the new value on the page.
+
+6. At this point, we are back to the beginning. The app is not doing anything and just patiently waiting. When a user clicks on the "Decrement" or "Increment" button the whole process will be kicked off again.
+
+Again these concepts are challenging at first and most likely very new to you. So **take some time to review this flow with your own code and even rebuild the Counter App from the begining to review these concepts.** After building many React apps these concepts will become second nature but you must first put in the time solidifying the fundamentals.
+
+Happy Reacting!
