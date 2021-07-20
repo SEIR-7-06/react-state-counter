@@ -608,6 +608,8 @@ Takes some time again to review the flow of information in your code.
 
 6. At this point, we are back to the beginning. The app is not doing anything and just patiently waiting. When a user clicks on the "Decrement" or "Increment" button the whole process will be kicked off again.
 
-Again these concepts are challenging at first and most likely very new to you. So **take some time to review this flow with your own code and even rebuild the Counter App from the begining to review these concepts.** After building many React apps these concepts will become second nature but you must first put in the time solidifying the fundamentals.
+Again these concepts are challenging at first and most likely very new to you. **Take some time to review this flow with your own code. To help solidify these concepts more rebuild the Counter App from the begining. You will likely find you pick up more the second or third time around.**
+
+Eventually these concepts will become second nature but you first must put in the time to solidify the fundamentals.
 
 Happy Reacting!
