@@ -1,5 +1,6 @@
 # React State
 
+<img src="https://i.imgur.com/KBwhRtk.png">
 <!-- ![react-logo](./images/react-white-logo.png)
  -->
 <br>
@@ -10,10 +11,6 @@
 - Learn how to set up state for a component
 - Learn how to manage the state of a component
 - Listen for DOM Events in React
-
-<br>
-
-<img src="https://i.imgur.com/KBwhRtk.png">
 
 <br>
 
