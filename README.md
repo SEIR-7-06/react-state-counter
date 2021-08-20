@@ -151,7 +151,7 @@ Here are the changes we've made.
 
 The `render` method of our class is a special method that will be called when the component is rendered. It simply returns **JSX** and _renders_ it to the page.
 
-If you save your file and go back to your browser, you should see the App component rendering to the page exactly as before!
+Save your file and in the browser, if all goes well, you'll see your App component rendering to the page exactly as before. Of course if you are new to this, you'll probably have syntax errors. Totally understandable! Read those error messages and double check your syntax :)
 
 <br/>
 
