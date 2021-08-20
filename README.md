@@ -554,6 +554,8 @@ We can trace this flow in our own Counter App. See if you can follow along in yo
 
 At this point we can increment our count by clicking the "Increment" button. Let's see if we can get that "Decrement" button to work. The code to get the "Decrement" button to work will look almost exactly the same as the code we wrote for "Increment" with one small change. This time when clicking "Decrement" we want to decrease the value of the `count` by 1.
 
+Start by creating a `handleDecrementClick` method in your `App` component.
+
 Try it out and see how far you can get before taking a look at the solution code!
 
 <details>
@@ -598,6 +600,33 @@ Try it out and see how far you can get before taking a look at the solution code
 
 And there you have it folks! We can now increment _and_ decrement our count on the page all by using React state.
 
+---
+## Add a Feature
+
+Add a feature where the count cannot go below 0. How could we implement that? What part of the code would we make some additions to?
+
+<details>
+  <summary>Hint:</summary>
+  
+  You'll only want to decrease the count in state _if_ a particular condition is true.
+</details>
+
+<details>
+  <summary>Solution:</summary>
+  
+  ```js
+  Inside the `handleDecrementClick` function we can do an if check first before updating state.
+  
+  ...
+  handleDecrementClick = () => {
+    if (this.state.count > 0) {
+      this.setState({ count: this.state.count - 1 });
+    }
+  }
+  ...
+  ```
+</details>
+
 Takes some time again to review the flow of information in your code.
 
 1. When the page loads in the browser, the component's **JSX** will render. Inside of our `render` method we are referencing `this.state.count` and will pull in the initial value of the `count` which is zero. At this point the app is not doing anything, just patiently waiting for someone to click on the "Decrement" button.
@@ -613,7 +642,5 @@ Takes some time again to review the flow of information in your code.
 6. At this point, we are back to the beginning. The app is not doing anything and just patiently waiting. When a user clicks on the "Decrement" or "Increment" button the whole process will be kicked off again.
 
 Again these concepts are challenging at first and most likely very new to you. **Take some time to review this flow with your own code. To help solidify these concepts more rebuild the Counter App from the begining. You will likely find you pick up more the second or third time around.**
-
-Eventually these concepts will become second nature but you first must put in the time to solidify the fundamentals.
 
 Happy Reacting!
