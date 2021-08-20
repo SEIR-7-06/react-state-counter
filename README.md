@@ -649,8 +649,8 @@ Happy Reacting!
 
 Head on over to the React Documentation for some excellent learning material and additional practice.
 
-React Documentation
+React Documentation<br>
 https://reactjs.org/
 
-React Tic-Tac-Toe Tutorial
+React Tic-Tac-Toe Tutorial<br>
 https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment
