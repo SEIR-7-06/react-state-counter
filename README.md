@@ -333,7 +333,9 @@ Continue playing around with this by changing the value in state and watching th
 
 At this point you might want to take some time to refresh yourself on our previous lesson on using the `this` keyword in a JavaScript class.
 
-We use a class as a blueprint to create many instances of a certain type of object. Whenever we wanted to reference properties on the instance of a class we used `this` to reference the instance. When an App component get's created we are creating an instance of the `App` class. We will be adding other properties and methods to our classes and we always use the `this` keyword to access them.
+We use a class as a blueprint to create many instances of a certain type of object. For example, we could have a Person class to create many Person objects. Whenever we wanted to reference properties on the instance (those objects that get created) we used `this` to reference the instance. Here, when App is rendered, we're creating an instance of the `App` class. We will be adding other properties and methods to our classes and we always use the `this` keyword to access them.
+
+If this doesn't quite gel yet, no worries. Often times it takes a while of using React classes before this makes sense.
 
 <br>
 
