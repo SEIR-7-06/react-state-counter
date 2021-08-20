@@ -6,16 +6,15 @@
 
 ## Learning Objectives
 
-- Set up state for a component
-- Manage the state of a component
+- Learn what state is used for in React
+- Learn how to set up state for a component
+- Learn how to manage the state of a component
 - Listen for DOM Events in React
 
 <br>
 
-## What is State
 ---
-
-<br>
+## What is State
 
 State is a concept we are actually already familiar with.
 
@@ -51,10 +50,9 @@ The best way to really understand this concept is to build a React app that uses
 
 <br>
 
-## Code Along: Build a Counter App
 ---
+## Code Along: Build a Counter App
 
-<br>
 
 To illustrate how state works in React we will be building a simple counter app that will look like this.
 
@@ -66,10 +64,8 @@ Take a moment to think about what information in our app will change over time. 
 
 <br>
 
-## Set Up
 ---
-
-<br>
+## Set Up
 
 Let's start by setting up a React app with the command line tool, Create React App.
 
@@ -108,9 +104,8 @@ We should now see our changes automatically update in the browser. _The Create R
 
 <br/>
 
-## Class Components
 ---
-<br/>
+## Class Components
 
 So far we have been defining all of our components as functions. These functions take in **props** as parameters and return **JSX**.
 
@@ -155,10 +150,8 @@ Save your file and in the browser, if all goes well, you'll see your App compone
 
 <br/>
 
-## Add the UI Elements
 ---
-
-<br/>
+## Add the UI Elements
 
 Now we'll go ahead and add the UI elements to make our app interactive. Let's add the count and the two buttons into the return statement of the `render` method.
 
@@ -194,10 +187,9 @@ The buttons wont do anything yet, but we get a sense of what our app is supposed
 
 <br>
 
-## Adding State
 ---
+## Adding State
 
-<br>
 
 We know that the count will change over time. For this reason we want to store this value in state.
 
@@ -232,10 +224,8 @@ React is expecting this property to specifically be called `state` and we aren't
 
 <br>
 
-## Storing Values in State
 ---
-
-<br>
+## Storing Values in State
 
 Now let's store the count in state. Create a property in the state object called count and set it's value to zero.
 
@@ -270,10 +260,8 @@ State is simply an object that stores all of the information about our component
 
 <br>
 
-## Referencing State
 ---
-
-<br>
+## Referencing State
 
 At the moment, our count in our `<p>` tag in **JSX** is hard-coded to zero. It doesn't yet have to ability to change. Instead of hard-coding a value we'll reference the count property from state.
 
@@ -326,10 +314,8 @@ Continue playing around with this by changing the value in state and watching th
 
 <br>
 
-### Why Do We Use "this"
 ---
-
-<br>
+### Why Do We Use "this"
 
 We use a class as a blueprint to create many instances of a certain type of object. For example, we could have a Person class to create many Person objects. `this` refers to the instance of the class. When App is rendered we're creating an instance of the `App` class. Anytime we want to access properties on that instance we'll use the `this` keyword. We will be adding other properties and methods to our classes and we always use the `this` keyword to access them. Feel free to review our previous lesson on JavaScript classes and our use of the `this` keyword to access properties and methods.
 
@@ -337,10 +323,8 @@ If this doesn't quite gel yet, no worries. Often times it takes a while of using
 
 <br>
 
-## Listening for a Button Click
 ---
-
-<br>
+## Listening for a Button Click
 
 We can see how we are able to change the value in the UI by manually changing the value stored in state.
 
@@ -377,10 +361,8 @@ You should see your log message appear on click!
 
 <br>
 
-## Passing a Handler Function
 ---
-
-<br>
+## Passing a Handler Function
 
 Our goal is to update the count in state when the button is clicked. We'll often create a separate handler function to take care of this logic.
 
@@ -420,8 +402,7 @@ class App extends React.Component {
 <br>
 
 ---
-
-<br>
+## Pass in Click Handler
 
 We'll then pass the `handleIncrementClick` method to the `onClick` event listener for our button.
 
@@ -462,10 +443,8 @@ Now When the button is clicked, `handleIncrementClick` will be called, which the
 
 <br>
 
-## Calling setState
 ---
-
-<br>
+## Calling setState
 
 We want our handler method to update the value of `count` in state. React gives us a handy method to call anytime we want to update our component's state called `setState`.
 
@@ -505,10 +484,8 @@ And now we should be error free!
 
 <br/>
 
-## Updating State with setState
 ---
-
-<br>
+## Updating State with setState
 
 When calling the `setState()` method, we'll pass it an object specifying the properties in state we want to update and the values we want to set them to.
 
@@ -528,6 +505,9 @@ This will update the value of `count` in state to one more than it was before.
 
 Save the file and test it out in your browser. If all goes well, when clicking the "Increment" button we should see the count increase by one!
 
+<br>
+
+---
 ## React Flow
 
 What is going on here?
@@ -550,6 +530,9 @@ We can trace this flow in our own Counter App. See if you can follow along in yo
 
 **Take your time reviewing this flow again before moving on.** The concepts are challenging at first, but if you take the time now to understand it, it will help out a lot later as we build on these concepts.
 
+<br>
+
+---
 ## Drecrement the Count on Click
 
 At this point we can increment our count by clicking the "Increment" button. Let's see if we can get that "Decrement" button to work. The code to get the "Decrement" button to work will look almost exactly the same as the code we wrote for "Increment" with one small change. This time when clicking "Decrement" we want to decrease the value of the `count` by 1.
@@ -600,8 +583,10 @@ Try it out and see how far you can get before taking a look at the solution code
 
 And there you have it folks! We can now increment _and_ decrement our count on the page all by using React state.
 
+<br>
+
 ---
-## Add a Feature
+# Add a Feature
 
 Add a feature where the count cannot go below 0. How could we implement that? What part of the code would we make some additions to?
 
@@ -645,7 +630,10 @@ Again these concepts are challenging at first and most likely very new to you. *
 
 Happy Reacting!
 
-## Additional Resources
+<br>
+
+---
+# Additional Resources
 
 Head on over to the React Documentation for some excellent learning material and additional practice.
 
