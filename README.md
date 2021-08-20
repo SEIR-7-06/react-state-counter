@@ -6,8 +6,9 @@
 
 ## Learning Objectives
 
-- Understand how state is used to manage a component that changes over time
 - Set up state for a component
+- Manage the state of a component
+- Listen for DOM Events in React
 
 <br>
 
