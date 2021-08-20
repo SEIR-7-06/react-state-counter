@@ -148,7 +148,8 @@ Here are the changes we've made.
 - We've replaced the `function` keyword with the `class` keyword followed by the name of our component. In this example we defined an `App` class that extends `React.Component` and in doing so we just defined an App component.
 - We've added a `render` method to our class and include our return statement inside of the `render` method.
 - Double check all of your parentheses and curly braces and make sure they are in the right place.
-- When this component is rendered, the `render` function willed be called returning the **JSX** and rendering it to the page.
+
+The `render` method of our class is a special method that will be called when the component is rendered. It simply returns **JSX** and _renders_ it to the page.
 
 If you save your file and go back to your browser, you should see the App component rendering to the page exactly as before!
 
