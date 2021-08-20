@@ -1,7 +1,8 @@
 # React State
 
-![react-logo](./images/react-white-logo.png)
-
+<img src="https://i.imgur.com/KBwhRtk.png">
+<!-- ![react-logo](./images/react-white-logo.png)
+ -->
 <br>
 
 ## Learning Objectives
