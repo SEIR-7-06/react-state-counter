@@ -644,3 +644,13 @@ Takes some time again to review the flow of information in your code.
 Again these concepts are challenging at first and most likely very new to you. **Take some time to review this flow with your own code. To help solidify these concepts more rebuild the Counter App from the begining. You will likely find you pick up more the second or third time around.**
 
 Happy Reacting!
+
+## Additional Resources
+
+Head on over to the React Documentation for some excellent learning material and additional practice.
+
+React Documentation
+https://reactjs.org/
+
+React Tic-Tac-Toe Tutorial
+https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment
