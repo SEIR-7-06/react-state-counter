@@ -27,7 +27,7 @@ You may hear someone refer to "the state of the country" or the "state of affair
 
 State is simply a JavaScript object for storing this information.
 
-If we think about a dropdown navigation on a website, we know that sometimes the dropdown navigation will be open, and sometimes it will be closed. The important thing that we know that this will change over time. For this reason we want to store this information in state.
+If we think about a dropdown navigation on a website, we know that sometimes the dropdown navigation will be open, and sometimes it will be closed. The important thing is that this will change over time. For this reason we want to store this information in state.
 
 It may look something like this, indicating that the navigation is open.
 
